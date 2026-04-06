@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Environment
+.env
+
+# Data and generated artifacts
+data/uploads/*
+!data/uploads/.gitkeep
+data/vector_stores/*
+!data/vector_stores/.gitkeep
+data/history/*
+!data/history/.gitkeep
+data/eval_results/*
+!data/eval_results/.gitkeep
+*.faiss
+*.pkl
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

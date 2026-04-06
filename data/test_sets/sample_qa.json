@@ -1,0 +1,12 @@
+[
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "Is hospitalization covered?",
+    "ground_truth": "Hospitalization is covered under inpatient benefits subject to policy terms."
+  },
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "What are the key exclusions?",
+    "ground_truth": "Common exclusions include cosmetic treatment and non-medical expenses unless specified."
+  }
+]
