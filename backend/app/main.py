@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.app.api.routes.eval import router as eval_router
 from backend.app.api.routes.health import router as health_router
 from backend.app.api.routes.history import router as history_router
 from backend.app.api.routes.query import router as query_router
@@ -22,4 +23,5 @@ app.add_middleware(
 app.include_router(upload_router)
 app.include_router(query_router)
 app.include_router(history_router)
+app.include_router(eval_router)
 app.include_router(health_router)

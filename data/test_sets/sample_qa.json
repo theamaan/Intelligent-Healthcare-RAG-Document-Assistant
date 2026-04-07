@@ -1,12 +1,43 @@
 [
   {
+    "_comment": "Replace every 'replace_with_real_doc_id' with a doc_id returned by POST /upload BEFORE running the evaluation script.",
     "doc_id": "replace_with_real_doc_id",
-    "question": "Is hospitalization covered?",
-    "ground_truth": "Hospitalization is covered under inpatient benefits subject to policy terms."
+    "question": "Is hospitalization covered under this plan?",
+    "ground_truth": "Hospitalization is covered under inpatient benefits subject to the policy terms and conditions."
   },
   {
     "doc_id": "replace_with_real_doc_id",
-    "question": "What are the key exclusions?",
-    "ground_truth": "Common exclusions include cosmetic treatment and non-medical expenses unless specified."
+    "question": "What are the main exclusions in this policy?",
+    "ground_truth": "Common exclusions include cosmetic treatment, experimental procedures, and non-medical expenses unless explicitly stated otherwise in the policy."
+  },
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "What is the annual deductible amount?",
+    "ground_truth": "The annual deductible amount is specified in the Schedule of Benefits section of the policy."
+  },
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "Is mental health treatment covered?",
+    "ground_truth": "Mental health and behavioral health services are covered subject to network and prior authorization requirements."
+  },
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "What is the out-of-pocket maximum for in-network services?",
+    "ground_truth": "The out-of-pocket maximum for in-network services is defined in the Summary of Benefits; once reached, the plan pays 100% of covered services."
+  },
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "Does the plan cover prescription drugs?",
+    "ground_truth": "Prescription drug coverage is included; formulary tiers and copay amounts are detailed in the Prescription Drug Schedule."
+  },
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "How do I request prior authorization?",
+    "ground_truth": "Prior authorization requests can be submitted by the treating provider via phone or the member portal as specified in the Utilization Management section."
+  },
+  {
+    "doc_id": "replace_with_real_doc_id",
+    "question": "What preventive services are covered at no cost?",
+    "ground_truth": "ACA-mandated preventive services including annual wellness visits, recommended screenings, and immunizations are covered at no cost-sharing when received in-network."
   }
 ]

@@ -1,6 +1,17 @@
-version: "3.9"
-
 services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
   backend:
     build:
       context: .
@@ -9,8 +20,20 @@ services:
       - "8000:8000"
     env_file:
       - .env
+    environment:
+      # Override Ollama URL so the backend reaches the ollama service by container name.
+      - OLLAMA_BASE_URL=http://ollama:11434
     volumes:
       - ./data:/app/data
+    depends_on:
+      ollama:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
 
   frontend:
     build:
@@ -23,14 +46,8 @@ services:
     environment:
       - API_BASE_URL=http://backend:8000
     depends_on:
-      - backend
-
-  ollama:
-    image: ollama/ollama:latest
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_models:/root/.ollama
+      backend:
+        condition: service_healthy
 
 volumes:
   ollama_models:
